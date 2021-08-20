@@ -24,17 +24,11 @@ const IMAGES = [
   'card3.png',
   'card4.png',
   'card5.png',
-  'final.png',
+  'final.jpg',
 ]
 
 
 function App() {
-  // React.useState(() => {
-  //   IMAGES.forEach((image) => {
-  //     new Image().src = `/images/${image}`;
-  //   });
-  // }, [])
-
   const sliderRef = React.useRef(null);
   const settings = React.useMemo(() => {
     return {
@@ -51,6 +45,9 @@ function App() {
   return (
     <React.Fragment>
       <div className="container">
+        <h1>Hello Doctor</h1>
+        <p>An easy & tasty way to up your calcium requirement</p>
+        <p>Scratch to Reveal</p>
         <ScratchCard {...settings}>
           <Slider {...sliderOptions} ref={sliderRef}>
             {

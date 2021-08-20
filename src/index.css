@@ -1,7 +1,11 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
 }
 
