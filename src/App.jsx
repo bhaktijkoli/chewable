@@ -1,5 +1,22 @@
 import * as React from 'react';
 import ScratchCard from 'react-scratchcard';
+import Slider from "react-slick";
+
+const sliderOptions = {
+  autoplay: false,
+  dots: false,
+  arrows: false,
+  fade: true,
+  infinite: false,
+  pauseOnFocus: false,
+  pauseOnHover: false,
+  speed: 1500,
+  autoplaySpeed: 1500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  className: 'card-slider'
+};
+
 
 const IMAGES = [
   'card1.png',
@@ -12,40 +29,40 @@ const IMAGES = [
 
 
 function App() {
-  React.useState(() => {
-    IMAGES.forEach((image) => {
-      new Image().src = `/images/${image}`;
-    });
-  }, [])
+  // React.useState(() => {
+  //   IMAGES.forEach((image) => {
+  //     new Image().src = `/images/${image}`;
+  //   });
+  // }, [])
 
-  const [cardIndex, setcardIndex] = React.useState(0);
-
-  const onComplete = React.useCallback(() => {
-    let number = 0;
-    setInterval(() => {
-      if (number <= IMAGES.length - 1) {
-        setcardIndex(number++)
-      }
-    }, 3000)
-  }, [])
-
+  const sliderRef = React.useRef(null);
   const settings = React.useMemo(() => {
     return {
       width: 600,
       height: 325,
       image: 'images/cover.png',
       finishPercent: 40,
-      onComplete,
+      onComplete: () => {
+        sliderRef.current.slickPlay()
+      },
     }
-  }, [onComplete])
+  }, [])
 
   return (
     <React.Fragment>
       <div className="container">
         <ScratchCard {...settings}>
-          <div className="card" style={{ backgroundImage: `url("/images/${IMAGES[cardIndex]}")` }}>
-
-          </div>
+          <Slider {...sliderOptions} ref={sliderRef}>
+            {
+              IMAGES.map((image, key) => {
+                return (
+                  <div className="card" key={key}>
+                    <img src={`/images/${image}`} alt="Card" />
+                  </div>
+                )
+              })
+            }
+          </Slider>
         </ScratchCard>
       </div>
     </React.Fragment>

@@ -5,9 +5,18 @@
   height: 100vh;
 }
 
+.card-slider {
+  background: #5795cd;
+  width: 600px;
+  height: 325px;
+}
+
 .card {
   background: #5795cd;
   width: 600px;
   height: 325px;
-  background-size: 600px 325px;
+}
+.card img {
+  width: 600px;
+  height: 325px;
 }
