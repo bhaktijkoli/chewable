@@ -32,8 +32,8 @@ function App() {
   const sliderRef = React.useRef(null);
   const settings = React.useMemo(() => {
     return {
-      width: 600,
-      height: 325,
+      width: 800,
+      height: 450,
       image: 'images/cover.png',
       finishPercent: 40,
       onComplete: () => {
