@@ -10,8 +10,8 @@ const sliderOptions = {
   infinite: false,
   pauseOnFocus: false,
   pauseOnHover: false,
-  speed: 1500,
-  autoplaySpeed: 1500,
+  speed: 1000,
+  autoplaySpeed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
   className: 'card-slider'
