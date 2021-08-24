@@ -45,9 +45,9 @@ function App() {
   return (
     <React.Fragment>
       <div className="container">
-        <h1>Hello Doctor</h1>
-        <p>An easy & tasty way to up your calcium requirement</p>
-        <p>Scratch to Reveal</p>
+        <h1 style={{ marginBottom: 0 }}>Hello Doctor</h1>
+        <p style={{ marginBottom: 0 }}>An easy & tasty way to up your calcium requirement</p>
+        <p style={{ marginBottom: 5 }}>Scratch to Reveal</p>
         <ScratchCard {...settings}>
           <Slider {...sliderOptions} ref={sliderRef}>
             {
