@@ -47,7 +47,7 @@ function App() {
       <div className="container">
         <h1 style={{ marginBottom: 0 }}>Hello Doctor</h1>
         <p style={{ marginBottom: 0 }}>An easy & tasty way to up your calcium requirement</p>
-        <p style={{ marginBottom: 5 }}>Scratch to Reveal</p>
+        <p style={{ marginBottom: 5 }}>Scratch to Discover</p>
         <ScratchCard {...settings}>
           <Slider {...sliderOptions} ref={sliderRef}>
             {
